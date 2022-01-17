@@ -14,14 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-<<<<<<< HEAD
-=======
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "5.13.14",
-    "nodemon": "^2.0.15"
->>>>>>> 3fdb87cbe860546214274fc42f2186f276158a81
   }
 }
