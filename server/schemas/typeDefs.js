@@ -17,9 +17,17 @@ const typeDefs = gql`
     savedBooks: [String]
     }
   }
-`;
-// type Mutation
-//type User later
-// type Auth later
 
+type Auth {
+// token and user
+
+}
+type Mutation {
+    # Set the required fields for new schools
+    addUser(username: String!, email: String!, password: String!, savedBooks: [String]): School
+  }
+
+
+`;
+// type Mutation: loginUser, addUser, saveBook, removeBook
 module.exports = typeDefs;
