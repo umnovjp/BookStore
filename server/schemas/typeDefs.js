@@ -10,23 +10,40 @@ const typeDefs = gql`
     link: String
   }
 
-  type Query {
-    me: {username: String!
+  type User {
+    _id: ID!
+    username: String!
     email: String!
-    password: String
-    savedBooks: [String]
-    }
+    bookCount: Int
+    savedBooks: [Book]
+  }
+
+  type Query {
+    users: [User]
+    user(userId: ID!, username: String!): User
+    me: User
   }
 
 type Auth {
-// token and user
-
+  token: ID
+  user: User
 }
-type Mutation {
-    # Set the required fields for new schools
-    addUser(username: String!, email: String!, password: String!, savedBooks: [String]): School
+
+input bookInput {
+    bookId: String!
+    authors: [String]
+    description: String!
+    title: String!
+    image: String
+    link: String
   }
 
+type Mutation {
+  login(email: String!, password: String!): Auth
+  addUser(username: String!, email: String!, password: String!, savedBooks: [String]): Auth
+  saveBook(bookData: bookInput!): User
+  removeBook(bookId: ID!): User
+  }
 
 `;
 // type Mutation: loginUser, addUser, saveBook, removeBook
