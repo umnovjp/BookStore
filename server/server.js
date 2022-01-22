@@ -4,7 +4,8 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path'); 
 //to add schemas
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection'); // need
+const db = require('./config/connection'); 
+const {authMiddleware} = require('./utils/auth');
 // const routes = require('./routes'); //no need
 
 const app = express(); //need
