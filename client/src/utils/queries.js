@@ -2,12 +2,19 @@ import { gql } from '@apollo/client';
 
 export const GET_ME = gql`
   query me {
-    profiles {
+    me {
+      _id
       username
       email
-      password
-      savedBooks
-    }
-  }`
-  // not sure to execute me query on apollo server change 'profiles'
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
+      }
+  }`  
 ;
