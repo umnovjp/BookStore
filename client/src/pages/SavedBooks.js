@@ -19,7 +19,7 @@ const SavedBooks = () => {
     if (!token) {
       return false;
     }
-    // MB: REFACTORED THIS
+    
     try {
       // const response = await deleteBook(bookId, token);
       // eslint-disable-next-line
