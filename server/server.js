@@ -6,6 +6,7 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection'); 
 const {authMiddleware} = require('./utils/auth');
+
 // const routes = require('./routes'); //no need
 
 const app = express(); //need
