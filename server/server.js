@@ -42,9 +42,17 @@ app.use(express.json()); //need
 
 // if we're in production, serve client/build as static assets 
 //to keep
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
+
+if (true) {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
