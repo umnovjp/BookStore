@@ -40,8 +40,7 @@ const startServer = async () => {
 app.use(express.urlencoded({ extended: false })); //change to extended false
 app.use(express.json()); //need
 
-// if we're in production, serve client/build as static assets 
-//to keep
+// askBCS told me to replace first line see new line in line 48 replaced line 44
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '../client/build')));
 // }
@@ -49,10 +48,6 @@ app.use(express.json()); //need
 if (true) {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
