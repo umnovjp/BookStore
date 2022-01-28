@@ -64,12 +64,4 @@ db.once('open', () => {
 
 });
 
-// db.once("open", async () => {
-//   // calling and awaiting function that starts server
-//   server = await startServer();
-//   app.listen(PORT, () => {
-//     console.log(`API server running on port ${PORT}!`);
-//     // log where we can go to test our GQL API
-//     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-//   });
-// });
+//making minor change in this file to prove askBCS that my changes are pushed
