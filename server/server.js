@@ -13,28 +13,28 @@ const app = express(); //need
 const PORT = process.env.PORT || 3001; //need
 // to add lines 9-12,14
 // uncommented lines 16-29
-const startServer = async () => {
-  // Create a new instance of an Apollo server with the GraphQL schema
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    // Add context to our server so data from the `authMiddleware()` function can pass data to our resolver functions
-    context: authMiddleware,
-  });
+// const startServer = async () => {
+//   // Create a new instance of an Apollo server with the GraphQL schema
+//   const server = new ApolloServer({
+//     typeDefs,
+//     resolvers,
+//     // Add context to our server so data from the `authMiddleware()` function can pass data to our resolver functions
+//     context: authMiddleware,
+//   });
 
-  await server.start();
-  // Update Express.js to use Apollo server features
-  server.applyMiddleware({ app });
- // return server;
-};
-startServer(); //commented out lines 31-37
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   context: authMiddleware,
-// });
-// // await server.start();
-// server.applyMiddleware({ app });
+//   await server.start();
+//   // Update Express.js to use Apollo server features
+//   server.applyMiddleware({ app });
+//  // return server;
+// };
+// startServer(); //commented out lines 31-37
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
+// await server.start();
+server.applyMiddleware({ app });
 
 
 app.use(express.urlencoded({ extended: false })); //change to extended false
